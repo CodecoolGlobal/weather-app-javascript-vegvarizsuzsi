@@ -1,0 +1,25 @@
+{
+  "name": "weather-app-javascript-vegvarizsuzsi",
+  "version": "1.0.0",
+  "description": "People Always Talk About The Weather...\r They are also always checking the weather in native and web applications.\r Now you can go further and create your own web based Weather application!",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/issues"
+  },
+  "homepage": "https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
