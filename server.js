@@ -1,6 +1,7 @@
 
 const express = require('express');
 const app = express();
+const port = 3000;
 
 // const options = {
 //     setHeaders: function (res, path, stat) {
@@ -15,7 +16,6 @@ app.use(express.static('public'));
 
 // app.use(logger)
 
-
 app.set('view engine', 'html')
 app.get("/", logger, (req, res) => {
     console.log('Here')
@@ -28,8 +28,10 @@ function logger(req, res, next) {
     next()
 }
 
-app.listen(3000);
-
+// app.listen(3000);
+app.listen(port, () => {
+    console.log(`Please click here: ${`http://localhost:3000/`}`)
+  })
 
 
 

@@ -13,8 +13,10 @@ const loadEvent = function () {
     suggestion.id = "suggestion";
     root.appendChild(suggestion);
 
+
     const weatherCardContainer = document.createElement("div");
     weatherCardContainer.id = "weather-card-container"
+
     root.appendChild(weatherCardContainer)
 
 
@@ -88,7 +90,9 @@ const loadEvent = function () {
                     });
 
                 }).catch(error => console.error(error));
-        };
+        } else {
+            weatherCardContainer.innerHTML = "";
+        }
     });
 };
 
