@@ -58,11 +58,9 @@ const loadEvent = function () {
                     list.childNodes.forEach(childNode => {
                         childNode.addEventListener("click", event => {
                             // Get the selected city name
-                            childNode.style.color = "lightgrey";
                             const selectedCity = event.target.textContent;
                             // Clear the previous weather card
                             weatherCardContainer.innerHTML = "";
-
 
                             // Make API call to fetch weather data for selected city
 
@@ -106,7 +104,10 @@ const loadEvent = function () {
                                     favoriteButton.addEventListener("click", () => {
                                         const favoriteItem = document.createElement("li");
                                         favoriteItem.textContent = selectedCity;
-                                        favoritesList.appendChild(favoriteItem);                                     
+                                        favoriteItem.style.listStyle = "square inside";
+                                        favoriteItem.style.color = "green";
+                                        favoritesList.appendChild(favoriteItem);
+                                        favoritesContainer.style.display = "block";                                    
                                         
                                     });                                  
                                     
