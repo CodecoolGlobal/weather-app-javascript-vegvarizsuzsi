@@ -16,8 +16,16 @@ const loadEvent = function () {
 
     const weatherCardContainer = document.createElement("div");
     weatherCardContainer.id = "weather-card-container"
-
     root.appendChild(weatherCardContainer)
+
+    const favoritesContainer = document.createElement("div");
+    favoritesContainer.id = "favorites-container";
+    favoritesContainer.style.display = "none";
+    root.appendChild(favoritesContainer);
+
+    const favoritesList = document.createElement("ul");
+    favoritesContainer.appendChild(favoritesList);
+
 
 
     citySearch.addEventListener("input", () => {
@@ -54,6 +62,8 @@ const loadEvent = function () {
                             const selectedCity = event.target.textContent;
                             // Clear the previous weather card
                             weatherCardContainer.innerHTML = "";
+
+
                             // Make API call to fetch weather data for selected city
 
                             const weatherApiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${selectedCity}&aqi=no`;
@@ -67,6 +77,8 @@ const loadEvent = function () {
                                     // Create elements to display city name, temperature, and conditions
                                     const cityName = document.createElement("div");
                                     cityName.textContent = data.location.name;
+                                    const time = document.createElement("div");
+                                    time.textContent = data.current.last_updated;
                                     const temperature = document.createElement("div");
                                     temperature.textContent = `Temperature: ${data.current.temp_c}°C`;
                                     const conditions = document.createElement("div");
@@ -76,6 +88,7 @@ const loadEvent = function () {
                                     conditionIcon.setAttribute("style", "width: 50px; height: 50px;")
                                     // Append the elements to the weathercard
                                     weatherCard.appendChild(cityName);
+                                    weatherCard.appendChild(time);
                                     weatherCard.appendChild(temperature);
                                     weatherCard.appendChild(conditions);
                                     weatherCard.appendChild(conditionIcon);
@@ -84,6 +97,21 @@ const loadEvent = function () {
                                     //Clear the suggestions and hide the suggestions container
                                     suggestion.innerHTML = "";
                                     suggestion.style.display = "none";
+
+                                    
+                                    const favoriteButton = document.createElement("button");
+                                    favoriteButton.textContent = "Add to Favorites";
+                                    weatherCardContainer.appendChild(favoriteButton);
+
+                                    favoriteButton.addEventListener("click", () => {
+                                        const favoriteItem = document.createElement("li");
+                                        favoriteItem.textContent = selectedCity;
+                                        favoritesList.appendChild(favoriteItem);                                     
+                                        
+                                    });                                  
+                                    
+
+
                                 })
                                 .catch(error => console.error(error));
                         });
