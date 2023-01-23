@@ -6,7 +6,7 @@ const loadEvent = function () {
     const citySearch = document.createElement("input");
     citySearch.type = "search";
     citySearch.id = "city-search",
-        citySearch.placeholder = "Search for a city...";
+    citySearch.placeholder = "Search for a city...";
     root.appendChild(citySearch);
 
     const suggestion = document.createElement("div");
@@ -96,21 +96,27 @@ const loadEvent = function () {
                                     suggestion.innerHTML = "";
                                     suggestion.style.display = "none";
 
-                                    
+
                                     const favoriteButton = document.createElement("button");
                                     favoriteButton.textContent = "Add to Favorites";
                                     weatherCardContainer.appendChild(favoriteButton);
 
+                                    let favoriteClicked = false;
+
                                     favoriteButton.addEventListener("click", () => {
+                                        if (!favoriteClicked) {
                                         const favoriteItem = document.createElement("li");
                                         favoriteItem.textContent = selectedCity;
                                         favoriteItem.style.listStyle = "square inside";
                                         favoriteItem.style.color = "green";
                                         favoritesList.appendChild(favoriteItem);
-                                        favoritesContainer.style.display = "block";                                    
-                                        
-                                    });                                  
-                                    
+                                        favoritesContainer.style.display = "block";
+                                        favoriteClicked = true;
+                                        favoriteButton.classList.add('clicked');                                        
+                                        }
+
+                                    });
+
 
 
                                 })
