@@ -58,6 +58,9 @@ async function searchFetch() {
             weatherCardContainer.innerHTML = "";
 
             fetchAPI(selectedCity)
+            fetchPicture(apiKeyBG, selectedCity)
+
+
         });
     });
 
@@ -98,15 +101,40 @@ async function fetchAPI(selectedCity) {
     favoriteButton.textContent = "Add to Favorites";
     weatherCardContainer.appendChild(favoriteButton);
 
-    favoriteButton.addEventListener("click", () => {
-        const favoriteItem = document.createElement("li");
-        favoriteItem.textContent = selectedCity;
-        favoriteItem.style.listStyle = "square inside";
-        favoriteItem.style.color = "green";
-        favoritesList.appendChild(favoriteItem);
-        favoritesContainer.style.display = "block";
+    let favoriteClicked = false;
 
+    favoriteButton.addEventListener("click", () => {
+        if (!favoriteClicked) {
+            const favoriteItem = document.createElement("li");
+            favoriteItem.textContent = selectedCity;
+            favoriteItem.style.listStyle = "square inside";
+            favoriteItem.style.color = "green";
+            favoritesList.appendChild(favoriteItem);
+            favoritesContainer.style.display = "block";
+            favoriteClicked = true;
+            favoriteButton.classList.add("clicked")
+        }
     });
+}
+
+const apiKeyBG = 'BgIDPVSazOmwwp3xFHj8Imho6PwNk1DQ2IhOZu5CsW5tGMMQM06rroXf';
+
+async function fetchPicture(apiKey, selectedCity) {
+    try {
+        const response = await fetch(`https://api.pexels.com/v1/search?query=${selectedCity}`, {
+            headers: {
+                'Authorization': apiKey
+            }
+        });
+        const data = await response.json();
+        const originalImageURL = data.photos[0].src.small;
+
+        document.getElementById("weather-card-container").style.backgroundImage = `url(${originalImageURL})`;
+        document.getElementById("weather-card-container").style.width = "190px";
+        document.getElementById("weather-card-container").style.height = "130px";
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const loadEvent = function () {
