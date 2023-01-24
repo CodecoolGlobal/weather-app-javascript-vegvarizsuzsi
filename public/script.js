@@ -14,8 +14,7 @@ const loadEvent = function () {
     citySearch.type = "search";
     citySearch.id = "city-search";
     citySearch.className = "form-control";
-    citySearch.placeholder = "Search for a city...";
-    citySearch.background = "d-flex justify-content-center";
+    citySearch.placeholder = "Search for a city...";    
     form.appendChild(citySearch);
 
     const suggestion = document.createElement("div");
