@@ -30,7 +30,7 @@ ul {
   color: black;
 }
 
-.form-control {
+#city-search {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -57,27 +57,28 @@ ul {
 #weather-card-container {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   min-width: 0;
   word-wrap: break-word;
   background-color: rgb(242, 243, 247);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, .125);
   border-radius: 0.25rem;
-  width: 300px;
-  height: 500px;
+  width: 800px;
+  height: 350px;
   color: black;
   box-shadow: 1px 5px 5px 3px rgba(171, 171, 176, 0.314);
 }
 
-.weather-card {
+#weather-card {
   text-align: center;
-  width: 300px;
-  height: 425px;
+  width: 500px;
+  height: 300px;
+  margin: 2%;
 }
 
 .name {
-  text-align: center;
+  text-align: right;
   padding: 10%;
   font-size: 35px;
   line-height: 1.1;
@@ -110,10 +111,10 @@ ul {
   padding: 10px;
 }
 
-.button {
+button {
   position: absolute;
-  top: 90%;
-  left: 50%;
+  top: 85%;
+  right: -1%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: rgb(248, 248, 248);
@@ -126,12 +127,12 @@ ul {
   text-align: center;
 }
 
-.button:hover {
+button:hover {
   color: white;
 }
 
 
-#spinner:not([hidden]) {
+/* #spinner:not([hidden]) {
   position: fixed;
   top: 0;
   left: 0;
@@ -161,4 +162,4 @@ ul {
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -73,19 +73,24 @@ async function fetchAPI(selectedCity) {
     const data = await response.json();
     // Create a weather card element
     const weatherCard = document.createElement("div");
-    weatherCard.classList.add("weather-card");
+    weatherCard.id = "weather-card";
     // Create elements to display city name, temperature, and conditions
     const cityName = document.createElement("div");
     cityName.textContent = data.location.name;
+    
     const time = document.createElement("div");
     time.textContent = data.current.last_updated;
+
     const temperature = document.createElement("div");
     temperature.textContent = `Temperature: ${data.current.temp_c}°C`;
+
     const conditions = document.createElement("div");
     conditions.textContent = `Conditions: ${data.current.condition.text}`;
+
     const conditionIcon = document.createElement("img");
     conditionIcon.src = data.current.condition.icon;
     conditionIcon.setAttribute("style", "width: 50px; height: 50px;")
+    
     // Append the elements to the weathercard
     weatherCard.appendChild(cityName);
     weatherCard.appendChild(time);
@@ -107,9 +112,7 @@ async function fetchAPI(selectedCity) {
     favoriteButton.addEventListener("click", () => {
         if (!favoriteClicked) {
             const favoriteItem = document.createElement("li");
-            favoriteItem.textContent = selectedCity;
-            favoriteItem.style.listStyle = "square inside";
-            favoriteItem.style.color = "green";
+            favoriteItem.textContent = selectedCity;                     
             favoritesList.appendChild(favoriteItem);
             favoritesContainer.style.display = "block";
             favoriteClicked = true;
@@ -128,11 +131,11 @@ async function fetchPicture(apiKey, selectedCity) {
             }
         });
         const data = await response.json();
-        const originalImageURL = data.photos[0].src.small;
+        const originalImageURL = data.photos[0].src.medium;
 
-        document.getElementById("weather-card-container").style.backgroundImage = `url(${originalImageURL})`;
-        document.getElementById("weather-card-container").style.width = "190px";
-        document.getElementById("weather-card-container").style.height = "130px";
+        document.getElementById("weather-card").style.backgroundImage = `url(${originalImageURL})`;
+        document.getElementById("weather-card").style.backgroundSize = "cover";
+      
     } catch (error) {
         console.log(error);
     }
