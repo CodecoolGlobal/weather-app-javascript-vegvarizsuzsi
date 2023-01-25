@@ -22,6 +22,7 @@ favoritesContainer.style.display = "none";
 root.appendChild(favoritesContainer);
 
 const favoritesList = document.createElement("ul");
+favoritesList.className = "favoritList"
 favoritesContainer.appendChild(favoritesList);
 
 const apiKey = '8961c699a656421ebc195937232001';
@@ -59,9 +60,6 @@ async function searchFetch() {
 
             fetchAPI(selectedCity)
             fetchPicture(apiKeyBG, selectedCity)
-
-
-
         });
     });
 
@@ -74,30 +72,38 @@ async function fetchAPI(selectedCity) {
     // Create a weather card element
     const weatherCard = document.createElement("div");
     weatherCard.id = "weather-card";
+    // Create a details card element
+    const detailsCard = document.createElement("div");
+    detailsCard.id = "details-card";
     // Create elements to display city name, temperature, and conditions
     const cityName = document.createElement("div");
     cityName.textContent = data.location.name;
+    cityName.className = "cityname"
     
     const time = document.createElement("div");
     time.textContent = data.current.last_updated;
+    time.className = "time"
 
     const temperature = document.createElement("div");
-    temperature.textContent = `Temperature: ${data.current.temp_c}°C`;
+    temperature.textContent = `${data.current.temp_c}°C`;
+    temperature.className = "temp"
 
     const conditions = document.createElement("div");
-    conditions.textContent = `Conditions: ${data.current.condition.text}`;
+    conditions.textContent = `${data.current.condition.text}`;
+    conditions.className = "condition"
 
     const conditionIcon = document.createElement("img");
     conditionIcon.src = data.current.condition.icon;
-    conditionIcon.setAttribute("style", "width: 50px; height: 50px;")
-    
+    conditionIcon.className = "icon"
+
     // Append the elements to the weathercard
-    weatherCard.appendChild(cityName);
-    weatherCard.appendChild(time);
-    weatherCard.appendChild(temperature);
-    weatherCard.appendChild(conditions);
-    weatherCard.appendChild(conditionIcon);
-    // Append the weather card to the weather card container
+    detailsCard.appendChild(cityName);
+    detailsCard.appendChild(time);
+    detailsCard.appendChild(temperature);
+    detailsCard.appendChild(conditions);
+    detailsCard.appendChild(conditionIcon);
+    // Append the weather card and details card to the weather card container
+    weatherCardContainer.appendChild(detailsCard);
     weatherCardContainer.appendChild(weatherCard);
     //Clear the suggestions and hide the suggestions container
     suggestion.innerHTML = "";
@@ -131,7 +137,7 @@ async function fetchPicture(apiKey, selectedCity) {
             }
         });
         const data = await response.json();
-        const originalImageURL = data.photos[0].src.medium;
+        const originalImageURL = data.photos[0].src.large;
 
         document.getElementById("weather-card").style.backgroundImage = `url(${originalImageURL})`;
         document.getElementById("weather-card").style.backgroundSize = "cover";
