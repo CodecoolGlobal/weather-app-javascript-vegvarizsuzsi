@@ -139,12 +139,24 @@ async function fetchPicture(apiKey, selectedCity) {
         const data = await response.json();
         const originalImageURL = data.photos[0].src.large;
 
+        
         document.getElementById("weather-card").style.backgroundImage = `url(${originalImageURL})`;
         document.getElementById("weather-card").style.backgroundSize = "cover";
-      
+        await preload(originalImageURL)
+
     } catch (error) {
         console.log(error);
     }
+}
+
+function preload(src) {
+    return new Promise((resolve) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.onload = () => {
+            resolve();
+        };
+    });
 }
 
 const loadEvent = function () {
