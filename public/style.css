@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -32,8 +31,9 @@ ul {
 }
 
 .favoritList {
-  position: absolute;
-  right: 25%;
+  float: right;
+  font-size: medium;
+  font-weight: bold ;
 }
 
 #city-search {
@@ -63,7 +63,7 @@ ul {
 #weather-card-container {
   position: relative;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
   background-color: rgb(242, 243, 247);
@@ -96,11 +96,16 @@ ul {
 .temp {
   font-size: 30px;
 }
-.condition, .cityname {
+
+.condition,
+.cityname {
   font-size: 25px;
 }
 
-.cityname, .time, .temp, .condition {
+.cityname,
+.time,
+.temp,
+.condition {
   line-height: 1.5;
 }
 
@@ -123,38 +128,5 @@ button {
 button:hover {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  background-color: 	#C0C0C0;
+  background-color: #C0C0C0;
 }
-
-
-/* #spinner:not([hidden]) {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#spinner::after {
-  content: "";
-  width: 80px;
-  height: 80px;
-  border: 2px solid #141313;
-  border-top: 3px solid #b6b5b5;
-  border-radius: 100%;
-  will-change: transform;
-  animation: spin 2s infinite linear;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-} */
