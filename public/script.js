@@ -131,22 +131,32 @@ const apiKeyBG = 'BgIDPVSazOmwwp3xFHj8Imho6PwNk1DQ2IhOZu5CsW5tGMMQM06rroXf';
 
 async function fetchPicture(apiKey, selectedCity) {
     try {
+        // Fetch the image data
         const response = await fetch(`https://api.pexels.com/v1/search?query=${selectedCity}`, {
             headers: {
                 'Authorization': apiKey
             }
         });
         const data = await response.json();
-        const originalImageURL = data.photos[0].src.original;
+        const originalImageURL = data.photos[0].src.large;
         
+        document.getElementById("weather-card").style.opacity = "0";
+
+        // Preload the image
+        await preload(originalImageURL)
+
         document.getElementById("weather-card").style.backgroundImage = `url(${originalImageURL})`;
         document.getElementById("weather-card").style.backgroundSize = "cover";
-        await preload(originalImageURL)
+
+        setTimeout(() => {
+            document.getElementById("weather-card").style.opacity = "1";
+        }, 0);
 
     } catch (error) {
         console.log(error);
     }
 }
+
 
 function preload(src) {
     return new Promise((resolve) => {
