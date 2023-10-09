@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/tree/development">
+  <a href="https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/blob/development/public/images/weather_app.png">
     <img src="images/weather.png" alt="weather" width="300" height="150">
   </a>
 
