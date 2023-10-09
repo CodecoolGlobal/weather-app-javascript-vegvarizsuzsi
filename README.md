@@ -97,6 +97,8 @@ To get started with the Weather App, follow these steps:
 
 **`City Search:`** Enter the name of a city, and the app will display matching cities as you type (after at least 3 characters).
 
+**`Dynamic City Background Images:`** For the enhance the user experience by dynamically we assigned background images to selected cities
+
 **`Weather Display:`** After selecting a city from the autocomplete list, the app will display the current weather conditions, including temperature, sky conditions, and humidity.
 
 **`Add to Favorites:`**` You can add a city to your favorites list, which appears when the input field is selected and empty. Favorites are stored temporarily and do not persist after a page reload.
