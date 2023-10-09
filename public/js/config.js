@@ -1,0 +1,4 @@
+const API_KEY = '8961c699a656421ebc195937232001';
+const API_KEY_BG = 'BgIDPVSazOmwwp3xFHj8Imho6PwNk1DQ2IhOZu5CsW5tGMMQM06rroXf';
+
+export { API_KEY, API_KEY_BG };

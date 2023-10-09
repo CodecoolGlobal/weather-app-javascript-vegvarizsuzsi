@@ -1,35 +1,8 @@
+import { API_KEY, API_KEY_BG } from './config.js';
+import { weatherCardContainer, favoritesList, favoritesContainer } from './dom.js';
 
-const root = document.getElementById("root");
-
-const citySearch = document.createElement("input");
-citySearch.type = "search";
-citySearch.id = "city-search",
-    citySearch.placeholder = "Search for a city...";
-root.appendChild(citySearch);
-
-const suggestion = document.createElement("div");
-suggestion.id = "suggestion";
-root.appendChild(suggestion);
-
-
-const weatherCardContainer = document.createElement("div");
-weatherCardContainer.id = "weather-card-container"
-root.appendChild(weatherCardContainer)
-
-const favoritesContainer = document.createElement("div");
-favoritesContainer.id = "favorites-container";
-favoritesContainer.style.display = "none";
-root.appendChild(favoritesContainer);
-
-const favoritesList = document.createElement("ul");
-favoritesList.className = "favoritList"
-favoritesContainer.appendChild(favoritesList);
-
-const apiKey = '8961c699a656421ebc195937232001';
-
-
-async function searchFetch() {
-    const apiUrl = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${citySearch.value}`;
+export async function searchFetch(city) {
+    const apiUrl = `https://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=${city}`;
 
     const response = await fetch(apiUrl)
     const data = await response.json()
@@ -59,14 +32,14 @@ async function searchFetch() {
             weatherCardContainer.innerHTML = "";
 
             fetchAPI(selectedCity)
-            fetchPicture(apiKeyBG, selectedCity)
+            fetchPicture(API_KEY_BG, selectedCity)
         });
     });
 
 }
 async function fetchAPI(selectedCity) {
     // Make API call to fetch weather data for selected city
-    const weatherApiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${selectedCity}&aqi=no`;
+    const weatherApiUrl = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${selectedCity}&aqi=no`;
     const response = await fetch(weatherApiUrl);
     const data = await response.json();
     // Create a weather card element
@@ -127,7 +100,7 @@ async function fetchAPI(selectedCity) {
     });
 }
 
-const apiKeyBG = 'BgIDPVSazOmwwp3xFHj8Imho6PwNk1DQ2IhOZu5CsW5tGMMQM06rroXf';
+
 
 async function fetchPicture(apiKey, selectedCity) {
     try {
@@ -168,17 +141,4 @@ function preload(src) {
     });
 }
 
-const loadEvent = function () {
-    citySearch.addEventListener("input", () => {
-        if (citySearch.value.length >= 3) {
 
-            searchFetch()
-
-        } else {
-            weatherCardContainer.innerHTML = "";
-        }
-    });
-};
-
-
-window.addEventListener("load", loadEvent);

@@ -1,45 +1,136 @@
-# Weather App
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/tree/development">
+    <img src="images/weather.png" alt="weather" width="150" height="80">
+  </a>
 
-## Story
+  <h3 align="center">WEATHER APP</h3>
 
-People Always Talk About The Weather...
-They are also always checking the weather in native and web applications.
-Now you can go further and create your own web based Weather application!
+ 
+</div>
 
-## What are you going to learn?
 
-- Create a GET requests
-- Getting data from an open API
-- Working with JSON files
 
-## Tasks
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>        
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#features">Features</a></li>   
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>    
+  </ol>
+</details>
 
-1. Create a simple input field with an autocomplete feature (when the user starts typing, after 3 characters a list of cities appear which matches that search). Create a card that shows the weather data (temperature, sky conditions, humidity, etc.) of the selected city.  Searching and selecting a new city should update the card.
-    - When we open up the page, there is a simple input field with an autocomplete feature that shows search matches after 3 characters
-    - When we search and select a city, the weather of this city is showing up
 
-2. [OPTIONAL] Do some improvements in order to make the web application more interesting.
-    - There is a button to put a city into the favourites, which list shows up when the input field is selected and the input is empty (the favourite list data doesn't need to persist after a reload)
-    - Weather panel is showing a fetch api spinner while the content is loading [Sample loading fetch API spinner on Codepen](https://codepen.io/wang0nya/pen/bzwQPr).
-    - Assign a nice background image to the chosen city that fits nicely to the site and apply it on the background. You can create object which store city name and image url.
-    - You can use Pexels API to get image for chosen city dynamically. Read the official [Pexels API Documentation](https://www.pexels.com/api/documentation).
-    - Generate a free API key from in order to access the Pexels API.
-    - Use presented endpoint to get image for chosen city e.g. for Krakow: https://api.pexels.com/v1/search?query=Krakow ![Weather App Pexels API in Postman](media/frontend/weather-app.png)
 
-## General requirements
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-- There is a `<div id="root">` tag without children when the page loads in
-- All the contents are placed and removed by javascript
+People always talk about the weather, and they're also always checking the weather in native and web applications. So We create our own web-based Weather application!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Hints
 
-- Plan carefully the project with your team mates
-- You can use [this](https://www.weatherapi.com/docs/) API, you have to [register](https://www.weatherapi.com/signup.aspx) for free and use an Access ID/Secret Key.
 
-## Background materials
+### Built With
 
-- <i class="far fa-exclamation"></i> [JavaScript Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- <i class="far fa-exclamation"></i> [JavaScript Fetch API Examples](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
-- <i class="far fa-exclamation"></i> [Weather API](https://www.weatherapi.com/docs/)
-- <i class="far fa-exclamation"></i> [Example autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)
-- <i class="far fa-book-open"></i> [CSS Weather Widgets you can draw inspiration from - Do NOT copy and paste one, create your own!](https://freefrontend.com/css-weather-widgets/)
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+* [![Express.js]
+* [![Javascript]
+* [![HTML]
+* [![CSS]
+* [![Pexels API]]
+* [![Weather API]]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get started with the Weather App, follow these steps:
+
+
+### Installation
+
+
+1. Get a free API Key at [https://www.weatherapi.com](https://www.weatherapi.com)
+2. Get a free API Key at [https://www.pexels.com/api/](https://www.pexels.com/api/)
+3. Clone the repo
+   ```sh
+   git clone https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi.git
+   ```
+4. Install NPM packages
+   ```sh
+   npm install
+   ```
+5. Enter your API KEYS:
+   ```js
+   const API_KEY = 'ENTER YOUR API KEY';
+   const API_KEY_BG = 'ENTER YOUR API KEY BG';   
+   ```
+6. Start the server:
+    ```sh
+    node server.js
+    ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- FEATURES -->
+## Features
+
+**`City Search:`** Enter the name of a city, and the app will display matching cities as you type (after at least 3 characters).
+
+**`Weather Display:`** After selecting a city from the autocomplete list, the app will display the current weather conditions, including temperature, sky conditions, and humidity.
+
+**`Add to Favorites:`**` You can add a city to your favorites list, which appears when the input field is selected and empty. Favorites are stored temporarily and do not persist after a page reload.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Zsuzsi Végvári - [@Zsuzsi Végvári_LinkedIn](https://www.linkedin.com/in/zsuzsiv%C3%A9gv%C3%A1ri/)
+
+Boglárka Bakos - [@Boglárka Bakos_LinkedIn](https://linkedin.com/in/boglarka-bakos)
+
+Project Link: [https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/tree/development](https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/tree/development)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[def]: https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085fc69.png
