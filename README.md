@@ -4,13 +4,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/blob/development/public/images/weather_app.png">
-    <img src="images/weather.png" alt="weather" width="300" height="150">
-  </a>
 
-  <h3 align="center">WEATHER APP</h3>
+  ![Weather App Screenshot](https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/blob/development/public/images/weather_app.png)
 
- 
+  <h3 align="center">WEATHER APP</h3> 
 </div>
 
 
