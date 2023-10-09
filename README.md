@@ -1,8 +1,11 @@
+<a name="readme-top"></a>
+
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/CodecoolGlobal/weather-app-javascript-vegvarizsuzsi/tree/development">
-    <img src="images/weather.png" alt="weather" width="150" height="80">
+    <img src="images/weather.png" alt="weather" width="300" height="150">
   </a>
 
   <h3 align="center">WEATHER APP</h3>
@@ -48,12 +51,12 @@ People always talk about the weather, and they're also always checking the weath
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Express.js]
-* [![Javascript]
-* [![HTML]
-* [![CSS]
-* [![Pexels API]]
-* [![Weather API]]
+* Express.js
+* Javascript
+* HTML
+* CSS
+* [Pexels API](https://www.pexels.com/api/)
+* [Weather API](https://www.weatherapi.com)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -134,3 +137,4 @@ Project Link: [https://github.com/CodecoolGlobal/weather-app-javascript-vegvariz
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [def]: https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085fc69.png
+
