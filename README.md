@@ -46,7 +46,7 @@ People always talk about the weather, and they're also always checking the weath
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This is a simple project, it was not worth using a framework. The project is characterized by asynchrony and the use of APIs. The following technologies were used during the project:
 
 * Express.js
 * Javascript
